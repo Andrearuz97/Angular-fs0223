@@ -1,6 +1,0 @@
-<h2>Componente Parent</h2>
-<button type="button" class="btn btn-primary me-2  mb-2"(click)="active = !active">CREA</button>
-<button type="button" class="btn btn-primary mb-2"(click)="active = !active">ELIMINA</button>
-<input type="text" name="form" class="form-control" [(ngModel)]="nome">
-<app-child *ngIf="active" [nomeInviato]="nome"></app-child>
-
