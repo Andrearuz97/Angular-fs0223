@@ -1,17 +1,14 @@
-<h2>Todo List</h2>
-
-<button (click)="addTodo()">Add Todo</button>
+<div>
+  <h2>Todo List</h2>
+  <input type="text" [(ngModel)]="newTask" placeholder="Nuovo Task" />
+  <button (click)="addTodo()">+</button>
+</div>
 
 <ul>
- <li *ngFor="let todo of todos">
+  <li *ngFor="let todo of todos">
     <input type="checkbox" [(ngModel)]="todo.completed" (change)="editTodo(todo)">
     <span [class.completed]="todo.completed">{{ todo.title }}</span>
     <button (click)="deleteTodo(todo.id)">Delete</button>
-  </li>
+
 </ul>
 
-<style>
-  .completed {
-    text-decoration: line-through;
-  }
-</style>

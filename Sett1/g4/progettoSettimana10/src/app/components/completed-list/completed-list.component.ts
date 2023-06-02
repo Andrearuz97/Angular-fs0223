@@ -13,10 +13,6 @@ export class CompletedListComponent implements OnInit {
   constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {
-    this.getCompletedTodos();
-  }
-
-  getCompletedTodos(): void {
     this.todosService.getCompletedTodos().then(todos => {
       this.completedTodos = todos;
     });

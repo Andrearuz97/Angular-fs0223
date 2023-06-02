@@ -5,63 +5,76 @@ import { Todo } from '../model/todo.interface';
   providedIn: 'root'
 })
 export class TodosService {
-  private todos: Todo[] = [
-    { id: 1, title: 'Task 1', completed: false },
-    { id: 2, title: 'Task 2', completed: true },
-    { id: 3, title: 'Task 3', completed: false }
-  ];
+  private todos: Todo[] = [];
+  private completedTodos: Todo[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  // Aggiungi un nuovo todo
-  addTodo(todo: Todo): Promise<Todo[]> {
-    return new Promise((resolve) => {
+  addTodo(_todo: Todo): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
-        this.todos.push(todo);
-        resolve(this.todos);
+        this.todos.push();
+        resolve();
       }, 2000);
     });
   }
 
-  // Modifica un todo esistente
-  editTodo(todo: Todo): Promise<Todo[]> {
-    return new Promise((resolve) => {
+  updateTodo(todo: Todo): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
         const index = this.todos.findIndex(t => t.id === todo.id);
         if (index !== -1) {
           this.todos[index] = todo;
         }
-        resolve(this.todos);
+        if (todo.completed) {
+          this.addToCompletedList(todo);
+        } else {
+          this.removeFromCompletedList(todo);
+        }
+        resolve();
       }, 2000);
     });
   }
 
-  // Elimina un todo
-  deleteTodo(todoId: number): Promise<Todo[]> {
-    return new Promise((resolve) => {
+  deleteTodo(todoId: number): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
         this.todos = this.todos.filter(t => t.id !== todoId);
-        resolve(this.todos);
+        this.removeFromCompletedListById(todoId);
+        resolve();
       }, 2000);
     });
   }
 
-  // Ottieni tutti i todo
   getTodos(): Promise<Todo[]> {
-    return new Promise((resolve) => {
+    return new Promise<Todo[]>((resolve) => {
       setTimeout(() => {
         resolve(this.todos);
       }, 2000);
     });
   }
 
-  // Ottieni i todo completati
+
   getCompletedTodos(): Promise<Todo[]> {
-    return new Promise((resolve) => {
+    return new Promise<Todo[]>((resolve) => {
       setTimeout(() => {
-        const completedTodos = this.todos.filter(t => t.completed);
-        resolve(completedTodos);
+        resolve(this.completedTodos);
       }, 2000);
     });
+  }
+
+  private addToCompletedList(todo: Todo): void {
+    const existingTodo = this.completedTodos.find(t => t.id === todo.id);
+    if (!existingTodo) {
+      this.completedTodos.push(todo);
+    }
+  }
+
+  private removeFromCompletedList(todo: Todo): void {
+    this.completedTodos = this.completedTodos.filter(t => t.id !== todo.id);
+  }
+
+  private removeFromCompletedListById(todoId: number): void {
+    this.completedTodos = this.completedTodos.filter(t => t.id !== todoId);
   }
 }

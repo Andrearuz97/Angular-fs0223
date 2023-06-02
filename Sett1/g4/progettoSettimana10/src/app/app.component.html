@@ -1,19 +1,21 @@
 
+<div class="container">
 <header>
-  <!-- Intestazione comune -->
+
 </header>
 
 <nav>
-  <!-- Navigazione comune tra le pagine -->
-  <a routerLink="/todo">Todo List</a>
-  <a routerLink="/completed">Completed List</a>
+  <a routerLink="/todo" routerLinkActive="active">Todos</a>
+  <a routerLink="/completed" routerLinkActive="active">Completati</a>
 </nav>
 
+
 <main>
-  <!-- Contenuto specifico di ogni pagina -->
+
   <router-outlet></router-outlet>
 </main>
 
 <footer>
-  <!-- Piè di pagina comune -->
+
 </footer>
+</div>

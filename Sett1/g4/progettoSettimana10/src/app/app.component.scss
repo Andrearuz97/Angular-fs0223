@@ -1,0 +1,27 @@
+.container{
+  text-align: center;
+  border: 2px solid black;
+  width: 500px;
+  padding-inline: 2rem;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+
+}
+nav {
+  a {
+    margin-inline: 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    padding-bottom: 2rem;
+
+    &:hover,
+    &:active,
+    &.active {
+      color: purple;
+    }
+  }
+}
+
+
