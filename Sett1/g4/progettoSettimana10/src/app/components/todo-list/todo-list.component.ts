@@ -42,7 +42,12 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  editTodo(todo: Todo): void {
+  enableEdit(todo: Todo): void {
+    todo.editing = true;
+  }
+
+  saveEdit(todo: Todo): void {
+    todo.editing = false;
     this.todosService.updateTodo(todo);
   }
 
@@ -54,4 +59,3 @@ export class TodoListComponent implements OnInit {
     });
   }
 }
-

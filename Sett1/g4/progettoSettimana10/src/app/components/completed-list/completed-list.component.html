@@ -1,3 +1,4 @@
+<div class="container2">
 <div *ngIf="loadingCompleted">Caricamento dei task completati in corso...</div>
 <ul *ngIf="!loadingCompleted">
   <li *ngFor="let todo of completedTodos">
@@ -5,3 +6,4 @@
   </li>
 </ul>
 <div *ngIf="noCompletedTasks">Nessun task completato</div>
+</div>

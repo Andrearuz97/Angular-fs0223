@@ -1,5 +1,14 @@
+input{
+  font-size: 1.5rem ;
+}
+span{
+  font-size:1.5rem;
+
+}
+
 button{
   margin-inline: 1rem !important;
+  font-size: 1.5rem;
 
 }
 #delete{
@@ -8,4 +17,24 @@ button{
 }
 ul{
   list-style-type: none;
+}
+#editButton{
+margin: 0rem !important;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.buttons button {
+  margin-left: 5px;
+}
+.contenitore{
+  font-size: 2rem;
 }

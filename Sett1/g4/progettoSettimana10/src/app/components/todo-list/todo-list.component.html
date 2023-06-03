@@ -1,18 +1,22 @@
-<div>
-  <div *ngIf="loadingTodos">Aggiornamento task in corso...</div>
+<div class="contenitore">
+  <div class="loading" *ngIf="loadingTodos">Aggiornamento task in corso...</div>
   <div *ngIf="!loadingTodos">
     <input type="text" [(ngModel)]="newTask" placeholder="Nuovo Task" />
-    <button (click)="addTodo()">➕</button> <!--Quì spero funzione l'emoticon (+) Perchè mi avvisa che è un carattere ambiguo...-->
+    <button (click)="addTodo()">➕</button>
   </div>
-  <div class="contenitore">
-    <ul style="list-style-type: none;">
-      <li *ngFor="let todo of todos">
-        <input type="checkbox" [(ngModel)]="todo.completed" (change)="editTodo(todo)">
+  <ul>
+    <li *ngFor="let todo of todos">
+      <div class="task-item">
+        <input type="checkbox" [(ngModel)]="todo.completed" (change)="enableEdit(todo)">
         <span [class.completed]="todo.completed">{{ todo.title }}</span>
-        <button id="delete" (click)="deleteTodoWithLoading(todo.id)">❌</button>
-        <span *ngIf="deletingTodoId === todo.id">Cancellazione in corso...</span>
-      </li>
-    </ul>
-  </div>
+        <div class="buttons">
+          <button id="delete" (click)="deleteTodoWithLoading(todo.id)">❌</button>
+          <span class="loading" *ngIf="deletingTodoId === todo.id">Cancellazione in corso...</span>
+          <button id="editButton" *ngIf="!todo.editing" (click)="enableEdit(todo)">🔧</button>
+          <input *ngIf="todo.editing" type="text" [(ngModel)]="todo.title">
+          <button *ngIf="todo.editing" (click)="saveEdit(todo)">Salva</button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
-

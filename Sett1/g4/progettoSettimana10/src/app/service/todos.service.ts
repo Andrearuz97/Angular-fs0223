@@ -18,7 +18,7 @@ export class TodosService {
         this.todos.push();
         this.loading = false;
         resolve();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -37,7 +37,7 @@ export class TodosService {
         }
         this.loading = false;
         resolve();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -49,7 +49,7 @@ export class TodosService {
         this.removeFromCompletedListById(todoId);
         this.loading = false;
         resolve();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -57,7 +57,7 @@ export class TodosService {
     return new Promise<Todo[]>((resolve) => {
       setTimeout(() => {
         resolve(this.todos);
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -66,7 +66,7 @@ export class TodosService {
     return new Promise<Todo[]>((resolve) => {
       setTimeout(() => {
         resolve(this.completedTodos);
-      }, 2000);
+      }, 1000);
     });
   }
 
