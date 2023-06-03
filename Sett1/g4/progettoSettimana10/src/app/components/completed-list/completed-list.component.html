@@ -1,7 +1,7 @@
 <div *ngIf="loadingCompleted">Caricamento dei task completati in corso...</div>
 <ul *ngIf="!loadingCompleted">
   <li *ngFor="let todo of completedTodos">
-    <span>{{ todo.title }}</span>
+    <span>- {{ todo.title }}</span>
   </li>
 </ul>
 <div *ngIf="noCompletedTasks">Nessun task completato</div>

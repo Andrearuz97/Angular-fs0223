@@ -2,14 +2,14 @@
   <div *ngIf="loadingTodos">Aggiornamento task in corso...</div>
   <div *ngIf="!loadingTodos">
     <input type="text" [(ngModel)]="newTask" placeholder="Nuovo Task" />
-    <button (click)="addTodo()">+</button>
+    <button (click)="addTodo()">➕</button> <!--Quì spero funzione l'emoticon (+) Perchè mi avvisa che è un carattere ambiguo...-->
   </div>
   <div class="contenitore">
     <ul style="list-style-type: none;">
       <li *ngFor="let todo of todos">
         <input type="checkbox" [(ngModel)]="todo.completed" (change)="editTodo(todo)">
         <span [class.completed]="todo.completed">{{ todo.title }}</span>
-        <button (click)="deleteTodoWithLoading(todo.id)">Delete</button>
+        <button id="delete" (click)="deleteTodoWithLoading(todo.id)">❌</button>
         <span *ngIf="deletingTodoId === todo.id">Cancellazione in corso...</span>
       </li>
     </ul>

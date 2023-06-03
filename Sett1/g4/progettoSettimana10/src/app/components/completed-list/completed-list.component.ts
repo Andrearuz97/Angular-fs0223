@@ -5,6 +5,7 @@ import { Todo } from '../../model/todo.interface';
 @Component({
   selector: 'app-completed-list',
   templateUrl: './completed-list.component.html',
+  styleUrls: ['../completed-list/completed-list.component.scss'],
 
 })
 export class CompletedListComponent implements OnInit {
