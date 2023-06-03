@@ -1,14 +1,18 @@
 <div>
-  <h2>Todo List</h2>
-  <input type="text" [(ngModel)]="newTask" placeholder="Nuovo Task" />
-  <button (click)="addTodo()">+</button>
+  <div *ngIf="loadingTodos">Aggiornamento task in corso...</div>
+  <div *ngIf="!loadingTodos">
+    <input type="text" [(ngModel)]="newTask" placeholder="Nuovo Task" />
+    <button (click)="addTodo()">+</button>
+  </div>
+  <div class="contenitore">
+    <ul style="list-style-type: none;">
+      <li *ngFor="let todo of todos">
+        <input type="checkbox" [(ngModel)]="todo.completed" (change)="editTodo(todo)">
+        <span [class.completed]="todo.completed">{{ todo.title }}</span>
+        <button (click)="deleteTodoWithLoading(todo.id)">Delete</button>
+        <span *ngIf="deletingTodoId === todo.id">Cancellazione in corso...</span>
+      </li>
+    </ul>
+  </div>
 </div>
-
-<ul>
-  <li *ngFor="let todo of todos">
-    <input type="checkbox" [(ngModel)]="todo.completed" (change)="editTodo(todo)">
-    <span [class.completed]="todo.completed">{{ todo.title }}</span>
-    <button (click)="deleteTodo(todo.id)">Delete</button>
-
-</ul>
 

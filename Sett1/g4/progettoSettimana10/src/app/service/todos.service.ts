@@ -7,19 +7,23 @@ import { Todo } from '../model/todo.interface';
 export class TodosService {
   private todos: Todo[] = [];
   private completedTodos: Todo[] = [];
+  private loading: boolean = false;
 
   constructor() {}
 
   addTodo(_todo: Todo): Promise<void> {
+    this.loading = true;
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         this.todos.push();
+        this.loading = false;
         resolve();
       }, 2000);
     });
   }
 
   updateTodo(todo: Todo): Promise<void> {
+    this.loading = true;
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         const index = this.todos.findIndex(t => t.id === todo.id);
@@ -31,16 +35,19 @@ export class TodosService {
         } else {
           this.removeFromCompletedList(todo);
         }
+        this.loading = false;
         resolve();
       }, 2000);
     });
   }
 
   deleteTodo(todoId: number): Promise<void> {
+    this.loading = true;
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         this.todos = this.todos.filter(t => t.id !== todoId);
         this.removeFromCompletedListById(todoId);
+        this.loading = false;
         resolve();
       }, 2000);
     });
