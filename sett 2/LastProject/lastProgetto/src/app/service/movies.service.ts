@@ -11,4 +11,5 @@ export class MoviesService {
   getMovies(){
     return this.http.get<Movies[]>('http://localhost:4300/api/movie/popular');
   }
+
 }

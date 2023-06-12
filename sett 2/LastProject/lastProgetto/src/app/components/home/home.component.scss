@@ -21,11 +21,12 @@ body {
   }
 
   .movie-card {
-    background-color: #f9c5d1;
+    background-color: grey;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     overflow: hidden;
+    font-size: 1.2rem;
   }
 
   .movie-card img {
