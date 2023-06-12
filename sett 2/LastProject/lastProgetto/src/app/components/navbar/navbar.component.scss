@@ -15,22 +15,18 @@
     color: green;
 }
 .dropdown-menu {
-    background-color: black;
+    background-color: #212529;
     border: none;
 }
 
   .dropdown-item {
-    color: green;
+    color: purple;
     font-weight: bold;
     font-size: 1.2rem;
   }
 
   .dropdown-item:hover, .dropdown-item:focus {
     background-color: black;
-    color: purple;
+    color: green;
   }
 
-  .dropdown-item.active {
-    background-color: black;
-    color: purple;
-  }
