@@ -11,28 +11,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/utenti']" routerLinkActive="active">Utenti</a>
+            <a class="nav-link" routerLink="/utenti" routerLinkActive="active">Utenti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Accedi</a>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Accedi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Registrati</a>
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Registrati</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle profile-toggle" data-bs-toggle="dropdown" routerLink="/profile" routerLinkActive="active">
               Profilo
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/profile/details']" routerLinkActive="active">Details</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/profile/favorite']" routerLinkActive="active">Favorites</a></li>
+              <li><a class="dropdown-item" routerLink="/profile/details" routerLinkActive="active">Details</a></li>
+              <li><a class="dropdown-item" routerLink="/profile/favorite" routerLinkActive="active">Favorites</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/movies']" routerLinkActive="active">Films</a>
+            <a class="nav-link" routerLink="/movies" routerLinkActive="active">Films</a>
           </li>
         </ul>
         <div class="text-end">

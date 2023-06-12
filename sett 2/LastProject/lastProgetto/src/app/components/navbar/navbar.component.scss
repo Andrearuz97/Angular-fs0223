@@ -14,3 +14,23 @@
 .navbar-nav .nav-link.active  {
     color: green;
 }
+.dropdown-menu {
+    background-color: black;
+    border: none;
+}
+
+  .dropdown-item {
+    color: green;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .dropdown-item:hover, .dropdown-item:focus {
+    background-color: black;
+    color: purple;
+  }
+
+  .dropdown-item.active {
+    background-color: black;
+    color: purple;
+  }
