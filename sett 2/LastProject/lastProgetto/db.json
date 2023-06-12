@@ -1,0 +1,22 @@
+{
+    "utenti":[
+        {
+        "nome": "Dario",
+        "cognome": "antinolfi",
+        "e-mail": "dario@antinolfi.com",
+        "corsi": 2
+        },
+        {
+        "nome": "Sofia",
+        "cognome": "Pazienza",
+        "e-mail": "Sofia@pazienza.com",
+        "corsi": 3
+        },
+        {
+        "nome": "Andrea",
+        "cognome": "Ruzittu",
+        "e-mail": "andrea@ruzittu.com",
+        "corsi": 1
+        }
+    ]
+}
