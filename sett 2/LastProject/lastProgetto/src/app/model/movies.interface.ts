@@ -6,4 +6,6 @@ export interface Movies {
     vote_count: number;
     release_date: number;
     original_title: string;
+    backdrop_path: string;
+    overview: string;
 }
