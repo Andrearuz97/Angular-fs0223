@@ -1,1 +1,16 @@
-<p>utenti works!</p>
+<h1 class="text-center">Lista degli utenti.</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       <div *ngIf="!users">
+        <span class="spinner-border text-success"></span>
+    </div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let utente of users">
+          Nome: {{ utente.nome }} -- Cognome: {{ utente.cognome }} <br/>
+          E-mail: {{ utente.email }} -- Corsi: {{ utente.corsi }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,34 +1,28 @@
 {
 "users": [
     {
-      "email": "n@p.com",
-      "password": "$2a$10$SmgrR2x18eeoJMFtk9N9FORmSTDG0ToOtqOS0Ik0jgiRWoAqe7sT2",
-      "name": "nicola toledo",
-      "id": 1
+      "nome": "Andrea",
+      "cognome": "Ruzittu",
+      "email": "ruzittu@gmail.it",
+      "corsi": 2
     },
     {
-      "email": "dario@dario.com",
-      "password": "$2a$10$ZLY63quWnMVo0lO951uFdOJRfUxeo8U6YJ/Cue06Vgp4Ad8S/CjaC",
-      "name": "Dario",
-      "id": 2
+        "nome": "Gavino",
+        "cognome": "Palombo",
+        "email": "Gavino@gmail.com",
+        "corsi": 4
     },
     {
-      "email": "mario@rossi.com",
-      "password": "$2a$10$RsIosJKYgHyT8uo.bosI5uYpN0PVmA6xdnhjT4jIFcbKbVS2RsiRC",
-      "name": "Mario Rossi",
-      "id": 3
+        "nome": "Silvio",
+        "cognome": "Berlusconi",
+        "email": "Silvio@gmail.org",
+        "corsi": 7
     },
     {
-      "email": "luca@iannice.gov",
-      "password": "$2a$10$5w60AiRs216q6mE4yxS5geckgGmD93VpzJP72A07rLlWL0bEH8mgO",
-      "name": "Luca Iannice",
-      "id": 4
-    },
-    {
-      "email": "gabriel@toncelli.com",
-      "password": "$2a$10$dUc3jYtuRxxmnln0QZn.ZeJPDfdXmW/QCPKLmVJ31FiOXe1wZoir2",
-      "name": "Gabriel",
-      "id": 5
+        "nome": "Luca",
+        "cognome": "Toni",
+        "email": "Toni@gmail.org",
+        "corsi": 1
     }
   ],
   "favorites": [

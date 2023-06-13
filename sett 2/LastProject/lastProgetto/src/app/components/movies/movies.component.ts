@@ -9,13 +9,14 @@ import { MoviesService } from 'src/app/service/movies.service';
 })
 export class MoviesComponent implements OnInit {
 
-    movies: Movies[] = [];
+    movies: Movies[] | undefined;
 
   constructor(private movieSrv: MoviesService ) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
     this.movieSrv.getMovies().subscribe((films: Movies[]) => {
         this.movies = films;
     });
-}
-}
+},1000)
+}}

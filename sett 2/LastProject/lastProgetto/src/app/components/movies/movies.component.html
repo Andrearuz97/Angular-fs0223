@@ -1,8 +1,18 @@
+<h1>Lista films</h1>
 <div class="container py-3">
     <div class="row">
+        <div *ngIf="!movies">
+            <span class="spinner-border text-success"></span>
+        </div>
         <div class="col-3 py-3" *ngFor="let movie of movies">
             <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="Cover films">
-
+            <div class="fs-4">
+                <span id="title">{{ movie.title }}</span>
+                <br>
+                <span id="rate">{{ movie.vote_average }}</span>
+                <i class="bi bi-star-fill text-warning"></i>
+            </div>
         </div>
     </div>
 </div>
+
