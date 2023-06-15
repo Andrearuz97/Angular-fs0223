@@ -1,0 +1,32 @@
+.container{
+    border:none !important;
+}
+#colorDetails{
+    background-color:  rgb(45, 45, 45);
+
+
+}
+h5{
+    font-size: 2rem;
+    color: purple;
+    font-weight: bold;
+}
+p{
+    font-size: 1.2rem;
+    color: green;
+}
+#btn{
+    color: purple;
+    background-color: rgb(92, 92, 92);
+    border: black solid;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+li{
+    color: orange;
+    font-size: 1.1rem;
+}
+.card-img {
+    object-fit: cover !important;
+    object-position: center !important;
+  }

@@ -13,23 +13,34 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 const rotte: Route[] = [
     {
         path: '',
         component: HomeComponent,
     },
+
+    {
+    path: 'movie-details/:id',
+    component: MovieDetailsComponent,
+    },
+
     {
         path: 'utenti',
         component: UtentiComponent,
     },
+
     {
         path: 'login',
         component: LoginComponent,
     },
+
+
     {
         path: 'register',
         component: RegisterComponent,
     },
+
     {
         path: 'profile',
         component: ProfileComponent,
@@ -44,10 +55,12 @@ const rotte: Route[] = [
          },
     ]
     },
+
     {
         path: 'movies',
         component: MoviesComponent
     },
+
     {
     path: '**',
     component: Error404Component,
@@ -68,6 +81,7 @@ const rotte: Route[] = [
         RegisterComponent,
         DetailsComponent,
         FavoritesComponent,
+        MovieDetailsComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h1 class="py-3">dettagli film</h1>
+      <div *ngIf="!movies" class=" text-center">
+        <span class="spinner-border text-success my-3"></span>
+      </div>
+      <img *ngIf="movies"  [src]="'http://image.tmdb.org/t/p/w500' + movies.backdrop_path" alt="Cover films">
+      <div id="colorDetails" class="card-body">
+        <h5 class="card-title" *ngIf="movies">{{ movies.title }}</h5>
+        <p class="card-text" *ngIf="movies">{{ movies.overview }}</p>
+        <ul *ngIf="movies">
+          <li class="list-group-item">Voto: {{ movies.vote_average }} <i class="bi bi-star-fill text-warning"></i></li>
+          <li class="list-group-item">Data di uscita: {{ movies.release_date }}</li>
+          <li class="list-group-item pb-2">Titolo originale: {{ movies.original_title }}</li>
+          <a routerLink="/movies" id="btn" class="btn btn-primary">Torna ai films</a>
+        </ul>
+
+      </div>
+    </div>
