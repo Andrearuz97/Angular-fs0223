@@ -30,6 +30,14 @@ body {
     margin-bottom: 10px;
   }
 
-  p {
-    color: black;
+  h2 {
+    color: green;
   }
+ a{
+    text-decoration:none;
+    color: purple;
+
+  }
+  a:hover{
+    color:red;
+}

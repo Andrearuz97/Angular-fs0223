@@ -5,28 +5,36 @@
     margin-right: 10px;
 }
 
-.navbar-nav .nav-link{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: purple;
+.navbar-nav {
+    .nav-link {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: purple;
 
-}
-.navbar-nav .nav-link.active  {
-    color: green;
-}
-.dropdown-menu {
-    background-color: #212529;
-    border: none;
-}
+      &:hover {
+        color: green;
+      }
 
-  .dropdown-item {
-    color: purple;
-    font-weight: bold;
-    font-size: 1.2rem;
+      &.active {
+        color: green;
+      }
+    }
   }
 
-  .dropdown-item:hover, .dropdown-item:focus {
-    background-color: black;
-    color: green;
+  .dropdown-menu {
+    background-color: #212529;
+    border: none;
+
+    .dropdown-item {
+      color: purple;
+      font-weight: bold;
+      font-size: 1.2rem;
+
+      &:hover,
+      &:focus {
+        background-color: black;
+        color: green;
+      }
+    }
   }
 
