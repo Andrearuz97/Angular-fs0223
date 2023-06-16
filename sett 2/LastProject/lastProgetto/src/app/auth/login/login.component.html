@@ -1,18 +1,11 @@
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <h1 class="text-center mb-4">Login</h1>
-        <form (ngSubmit)="login()">
-          <div class="form-group">
+    <form #form="ngForm" (ngSubmit)="login(form)">
+        <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Inserisci la tua email" [(ngModel)]="email">
-          </div>
-          <div class="form-group">
+            <input type="email" id="email" name="email" class="form-control" required ngModel>
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Inserisci la tua password" [(ngModel)]="password">
-          </div>
-          <button type="submit" class="mt-2 btn btn-success btn-block">Accedi</button>
-        </form>
-      </div>
-    </div>
-  </div>
+            <input type="password" id="password" name="password" class="form-control" required ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Accedi</button>
+    </form>
+</div>

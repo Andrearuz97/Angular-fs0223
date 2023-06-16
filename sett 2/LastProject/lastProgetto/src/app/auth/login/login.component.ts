@@ -1,30 +1,29 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
-  email: string = '';
-  password: string = '';
+export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    const loginData = {
-      email: this.email,
-      password: this.password
-    };
+    ngOnInit(): void {}
 
-    this.authService.login(loginData).subscribe(
-      () => {
-        // Accesso riuscito, effettua la gestione della navigazione o delle azioni desiderate
-      },
-      (error) => {
-        // Gestione dell'errore di accesso
-      }
-    );
-  }
+    login(form: NgForm) {
+        console.log(form.value);
+        try {
+            this.authService.login(form.value).subscribe();
+            alert('Login effettuato!');
+            this.router.navigate(['/']);
+        } catch (error) {
+            alert('Login errato');
+            console.error(error);
+            this.router.navigate(['/login']);
+        }
+    }
 }

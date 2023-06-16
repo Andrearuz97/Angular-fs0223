@@ -14,19 +14,19 @@
             <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/utenti" routerLinkActive="active">Utenti</a>
+            <a class="nav-link" routerLink="/utenti" routerLinkActive="active"*ngIf="utente">Utenti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login" routerLinkActive="active">Accedi</a>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!utente">Accedi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/register" routerLinkActive="active">Registrati</a>
+            <a class="nav-link" routerLink="/register" routerLinkActive="active"*ngIf="!utente">Registrati</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/movies" routerLinkActive="active">Films</a>
+            <a class="nav-link" routerLink="/movies" routerLinkActive="active"*ngIf="utente">Films</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle profile-toggle" data-bs-toggle="dropdown" routerLink="/profile" routerLinkActive="active">
+            <a class="nav-link dropdown-toggle profile-toggle" data-bs-toggle="dropdown" routerLink="/profile" routerLinkActive="active"*ngIf="utente">
               Profilo
             </a>
             <ul class="dropdown-menu">
@@ -36,7 +36,10 @@
           </li>
         </ul>
         <div class="text-end">
-          <button type="button" id="logout" name="logout" class="btn btn-danger me-0">Esci</button>
+            <h6 *ngIf="utente" class=" text-warning">
+                Benvenuto {{utente.user.nome}}
+            </h6>
+          <button type="button" id="logout" name="logout" class="btn btn-danger me-0" *ngIf="utente"(click)="logout()">Esci</button>
         </div>
       </div>
     </div>

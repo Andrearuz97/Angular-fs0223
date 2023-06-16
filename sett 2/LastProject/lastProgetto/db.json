@@ -7,6 +7,14 @@
       "cognome": "Ruzittu",
       "corsi": 2,
       "id": 1
+    },
+    {
+      "email": "silvio@mediaset.it",
+      "password": "$2a$10$BjEftjo35CzkgiL19eRVsOVRVT2baxVhxC6euDT068oXojxJ9U.sW",
+      "nome": "Silvio",
+      "cognome": "Berlusconi",
+      "corsi": 30,
+      "id": 2
     }
   ],
   "favorites": [

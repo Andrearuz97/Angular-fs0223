@@ -18,6 +18,8 @@ export class AuthService {
     private authSubj = new BehaviorSubject<null | Auth>(null);
     user$ = this.authSubj.asObservable();
     timeOut: any;
+    currentUser: Auth | null = null;
+
 
     constructor(private http: HttpClient, private router: Router) {}
 
@@ -75,6 +77,12 @@ export class AuthService {
         return this.http.post(`${this.baseURL}register`, data )
 
         };
+
+        getUserDetails(): Auth | null {
+            return this.authSubj.getValue();
+          }
+
+
       }
 
 
