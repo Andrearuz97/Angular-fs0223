@@ -37,7 +37,7 @@
         </ul>
         <div class="text-end">
             <h6 *ngIf="utente" class=" text-warning">
-                Benvenuto {{utente.user.nome}}
+                Benvenuto/a {{utente.user.nome}}
             </h6>
           <button type="button" id="logout" name="logout" class="btn btn-danger me-0" *ngIf="utente"(click)="logout()">Esci</button>
         </div>

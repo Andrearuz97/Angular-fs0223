@@ -15,14 +15,12 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {}
 
     login(form: NgForm) {
-        console.log(form.value);
         try {
             this.authService.login(form.value).subscribe();
-            alert('Login effettuato!');
+            alert('Login effettuato con successo!');
             this.router.navigate(['/']);
         } catch (error) {
-            alert('Login errato');
-            console.error(error);
+            alert('Login non riuscito');
             this.router.navigate(['/login']);
         }
     }

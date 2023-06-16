@@ -27,31 +27,12 @@ export class RegisterComponent implements OnInit {
     } catch(error:any){
         console.error(error);
         if(error.status==400){
-            alert('Questa e-mail risulta già registrata');
+            alert('Questa e-mail risulta già utilizzata');
             this.router.navigate(['/register']);
 
 }
-
-
-    const userData = {
-      nome: this.nome,
-      cognome: '', // Aggiungi un valore vuoto per la proprietà cognome
-      email: this.email,
-      password: this.password,
-      corsi: 0, // Aggiungi un valore predefinito per la proprietà corsi
-    };
-
-    this.authService.register(userData).subscribe({
-      next: () => {
-        // Registrazione riuscita, reindirizza l'utente alla pagina di login
-        this.router.navigate(['/login']);
-      },
-      error: (error) => {
-        // Gestisci gli errori di registrazione
-        console.log('Errore durante la registrazione:', error);
-        alert('Errore durante la registrazione');
-      }
-    });
-  }
-
+}
 }}
+
+
+

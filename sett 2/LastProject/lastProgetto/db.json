@@ -15,6 +15,14 @@
       "cognome": "Berlusconi",
       "corsi": 30,
       "id": 2
+    },
+    {
+      "email": "gaia@gmail.it",
+      "password": "$2a$10$tSj0.5lJAlNCf7ZazPPIbuqbayjyzcDpm/yyZZfLHgvEh/D5qVe5e",
+      "nome": "Gaia",
+      "cognome": "Tecleme",
+      "corsi": 2,
+      "id": 3
     }
   ],
   "favorites": [

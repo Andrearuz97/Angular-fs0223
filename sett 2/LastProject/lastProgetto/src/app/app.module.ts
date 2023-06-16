@@ -42,29 +42,30 @@ const rotte: Route[] = [
     {
     path: 'movie-details/:id',
     component: MovieDetailsComponent,
+    canActivate: [AuthGuard]
     },
 
     {
         path: 'utenti',
         component: UtentiComponent,
+        canActivate: [AuthGuard]
     },
 
     {
         path: 'login',
         component: LoginComponent,
-        //canActivate: [AuthGuard]
     },
 
 
     {
         path: 'register',
         component: RegisterComponent,
-        //canActivate: [AuthGuard]
     },
 
     {
         path: 'profile',
         component: ProfileComponent,
+        canActivate: [AuthGuard],
          children:[
             {
             path:'details',
@@ -79,7 +80,8 @@ const rotte: Route[] = [
 
     {
         path: 'movies',
-        component: MoviesComponent
+        component: MoviesComponent,
+        canActivate: [AuthGuard]
     },
 
     {
