@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +10,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  nome!: string;
+  email!: string;
+  password!: string;
+  confirmPassword!: string;
 
-  ngOnInit(): void {
-  }
+  constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit(): void {}
+
+  register(form: NgForm) {
+   console.log(form.value);
+    try{
+        this.authService.register(form.value).subscribe();
+        this.router.navigate(['/login'])
+    } catch(error:any){
+        console.error(error);
+        if(error.status==400){
+            alert('Questa e-mail risulta già registrata');
+            this.router.navigate(['/register']);
 
 }
+
+
+    const userData = {
+      nome: this.nome,
+      cognome: '', // Aggiungi un valore vuoto per la proprietà cognome
+      email: this.email,
+      password: this.password,
+      corsi: 0, // Aggiungi un valore predefinito per la proprietà corsi
+    };
+
+    this.authService.register(userData).subscribe({
+      next: () => {
+        // Registrazione riuscita, reindirizza l'utente alla pagina di login
+        this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        // Gestisci gli errori di registrazione
+        console.log('Errore durante la registrazione:', error);
+        alert('Errore durante la registrazione');
+      }
+    });
+  }
+
+}}

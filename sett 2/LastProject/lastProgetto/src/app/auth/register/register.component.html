@@ -1,26 +1,19 @@
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <h1 class="text-center mb-4">Registrazione profilo</h1>
-        <form>
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome...">
-          </div>
-          <div class="form-group">
+    <form #form="ngForm" (ngSubmit)="register(form)">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control" required ngModel placeholder="Inserisci il tuo nome">
+            <label for="cognome">Cognome</label>
+            <input type="text" name="cognome" id="cognome" class="form-control mb-4" required ngModel placeholder="Inserisci il tuo cognome">
+            <label  class="me-3" for="corsi">Nm. corsi frequentati</label>
+            <input type="number" name="corsi" id="corsi" class="form-control-sm" required ngModel>
+        </div>
+        <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Inserisci la tua email...">
-          </div>
-          <div class="form-group">
+            <input type="email" name="email" id="email" class="form-control" required ngModel placeholder="Inserisci la tua mail">>
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Inserisci la tua password...">
-          </div>
-          <div class="form-group">
-            <label for="confirmPassword">Conferma Password</label>
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Conferma la tua password...">
-          </div>
-          <button type="submit" class="mt-2 btn btn-success btn-block">Registrati</button>
-        </form>
-      </div>
-    </div>
-  </div>
+            <input type="password" name="password" id="password" class="form-control" required ngModel placeholder="Inserisci la tua password">
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-success mt-3">Registrati</button>
+    </form>
+</div>

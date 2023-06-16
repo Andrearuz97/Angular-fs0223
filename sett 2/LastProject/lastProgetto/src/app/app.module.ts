@@ -14,10 +14,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { AuthGuard } from './auth/auth.guard';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth/auth.service';
+
 const rotte: Route[] = [
     {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+    },
+    {
+        path: 'home',
         component: HomeComponent,
+        children: [
+            {
+            path: 'login',
+            component: LoginComponent,
+            },
+            {
+            path: 'register',
+            component: RegisterComponent,
+            }
+        ]
     },
 
     {
@@ -33,12 +52,14 @@ const rotte: Route[] = [
     {
         path: 'login',
         component: LoginComponent,
+        //canActivate: [AuthGuard]
     },
 
 
     {
         path: 'register',
         component: RegisterComponent,
+        //canActivate: [AuthGuard]
     },
 
     {
@@ -86,8 +107,9 @@ const rotte: Route[] = [
     imports: [
         BrowserModule,
     RouterModule.forRoot(rotte),
-    HttpClientModule],
-    providers: [],
+    HttpClientModule,
+    FormsModule],
+    providers: [AuthGuard,AuthService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

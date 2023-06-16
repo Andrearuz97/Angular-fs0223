@@ -1,28 +1,12 @@
 {
-"users": [
+  "users": [
     {
+      "email": "ruzittu.andrea97@gmail.com",
+      "password": "$2a$10$7pLfR5J2JdvN7dVDuK/yEeBwhtlRRhFhAoELcfBqVEVqQ9lh3xGSi",
       "nome": "Andrea",
       "cognome": "Ruzittu",
-      "email": "ruzittu@gmail.it",
-      "corsi": 2
-    },
-    {
-        "nome": "Gavino",
-        "cognome": "Palombo",
-        "email": "Gavino@gmail.com",
-        "corsi": 4
-    },
-    {
-        "nome": "Silvio",
-        "cognome": "Berlusconi",
-        "email": "Silvio@gmail.org",
-        "corsi": 7
-    },
-    {
-        "nome": "Luca",
-        "cognome": "Toni",
-        "email": "Toni@gmail.org",
-        "corsi": 1
+      "corsi": 2,
+      "id": 1
     }
   ],
   "favorites": [
