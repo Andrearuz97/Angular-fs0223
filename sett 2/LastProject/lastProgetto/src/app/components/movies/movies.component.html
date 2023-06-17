@@ -11,7 +11,7 @@
             <div class="fs-4">
                 <span id="title">{{ movie.title }}</span>
             </div>
-            <button type="button" (click)="isFavorito(movie.id) ? eliminaFavorito(movie.id) : aggiungiFavorito(movie.id)" [ngClass]="{'bg-danger': isFavorito(movie.id), 'bg-white': !isFavorito(movie.id)}">👍</button>
+            <button type="button" (click)="isFavorito(movie.id) ? eliminaFavorito(movie.id) : aggiungiFavorito(movie.id)" [ngClass]="{'bg-success': isFavorito(movie.id), 'bg-danger': !isFavorito(movie.id)}">👍</button>
 
         </div>
     </div>

@@ -13,7 +13,7 @@ import { Movies } from 'src/app/model/movies.interface';
 })
 export class MoviesComponent implements OnInit {
 
-    movies: Movies[] = [];
+    movies!: Movies[];
     imageURL = environment.imageUrl;
     utente: Auth | null = null;
     favoriti: Favourite[] = [];
@@ -23,9 +23,11 @@ export class MoviesComponent implements OnInit {
     constructor(private movieSrv: MoviesService, private authService: AuthService) {}
 
     ngOnInit(): void {
+        setTimeout(() => {
         this.movieSrv.getMovies().subscribe((films: Movies[]) => {
             this.movies = films;
         });
+    }, 1000);
 
         this.authService.user$.subscribe((utente) => {
             this.utente = utente;
