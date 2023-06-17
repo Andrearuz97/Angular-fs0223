@@ -5,7 +5,6 @@ import { Movies } from 'src/app/model/movies.interface';
 import { MoviesService } from 'src/app/service/movies.service';
 import { environment } from 'src/environments/environment';
 import { Favourite } from 'src/app/model/favourite.interface';
-import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'app-favorites',
