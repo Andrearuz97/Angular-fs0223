@@ -17,7 +17,43 @@
       "id": 2
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "userId": 2,
+      "movieId": 804435,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "movieId": 567189,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "movieId": 808023,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "movieId": 615457,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "movieId": 632357,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "movieId": 634528,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "movieId": 823855,
+      "id": 13
+    }
+  ],
   "genres": [],
   "movies-popular": [
     {

@@ -13,6 +13,7 @@ export class DetailsComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    setTimeout(() => {
     this.userDetails = this.authService.getUserDetails();
-  }
-}
+  },1000);
+  }}

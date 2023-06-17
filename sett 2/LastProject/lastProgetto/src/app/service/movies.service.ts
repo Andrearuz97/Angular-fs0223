@@ -8,8 +8,11 @@ import { Favourite } from '../model/favourite.interface';
   providedIn: 'root'
 })
 export class MoviesService {
-    baseUrl = environment.baseURL;
     movies: Movies[] = [];
+    getMoviesDetails(movieIds: number[]) {
+        throw new Error('Method not implemented.');
+    }
+    baseUrl = environment.baseURL;
   constructor(private http: HttpClient) { }
   getMovies(){
     return this.http.get<Movies[]>(`${this.baseUrl}api/movie/popular`);

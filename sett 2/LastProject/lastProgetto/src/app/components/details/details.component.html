@@ -1,3 +1,6 @@
+<div *ngIf="!userDetails">
+    <span class="spinner-border text-success mt-3"></span>
+</div>
 <div *ngIf="userDetails" class="container text-danger">
     <h2>Dettagli profilo di {{userDetails.user.nome}}</h2>
 

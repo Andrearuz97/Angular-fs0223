@@ -17,6 +17,6 @@ export class UtentiComponent implements OnInit {
     this.userService.getUsers().subscribe((_user: Utenti[]) => {
         this.users = _user;
   })
-  }, 2500)
+  }, 1000)
 }
 }

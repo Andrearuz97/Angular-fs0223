@@ -1,6 +1,9 @@
 <h1>Films preferiti</h1>
 <div class="container">
     <div class="row">
+        <div *ngIf="!favoriti">
+            <span class="spinner-border text-success"></span>
+        </div>
         <div class="col-4" *ngFor="let movie of movies">
             <div class="card w-100">
                 <div class="card-body mb-4" *ngIf="movies">

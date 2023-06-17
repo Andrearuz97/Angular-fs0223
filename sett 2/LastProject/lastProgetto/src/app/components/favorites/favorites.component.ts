@@ -5,6 +5,7 @@ import { Movies } from 'src/app/model/movies.interface';
 import { MoviesService } from 'src/app/service/movies.service';
 import { environment } from 'src/environments/environment';
 import { Favourite } from 'src/app/model/favourite.interface';
+import { forkJoin } from 'rxjs';
 
 @Component({
     selector: 'app-favorites',
@@ -15,7 +16,7 @@ export class FavoritesComponent implements OnInit {
     movies: Movies[] = [];
     imageURL = environment.imageUrl;
     utente!: Auth | null;
-    favoriti: Favourite[] = [];
+    favoriti!: Favourite[];
     userId!: number;
 
     constructor(private authSrv: AuthService, private movieSrv: MoviesService) {
@@ -26,22 +27,23 @@ export class FavoritesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.movieSrv
-            .recuperaFavoriti(this.userId).subscribe((likes: Favourite[]) => {
-                this.favoriti = likes;
-            });
         setTimeout(() => {
-            this.stampaFavoriti();
-        }, 500);
+            this.movieSrv.recuperaFavoriti(this.userId).subscribe((likes: Favourite[]) => {
+                this.favoriti = likes;
+                this.stampaFavoriti();
+            });
+        }, 1000);
     }
 
     stampaFavoriti() {
-        this.favoriti.forEach((film) => {
-            if (film.movieId) {
-                this.movieSrv.movieDetails(film.movieId).subscribe((dettaglio) => {
-                        this.movies.push(dettaglio);
-                    });
-            }
+        const movieIds = this.favoriti
+            .map((film) => film.movieId)
+            .filter((id) => id !== undefined) as number[];
+
+        const observables = movieIds.map((movieId) => this.movieSrv.movieDetails(movieId));
+
+        forkJoin(observables).subscribe((dettagli: Movies[]) => {
+            this.movies = dettagli;
         });
     }
 }
