@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:4300/'
-
+  baseURL: 'http://localhost:4300/',
+  imageUrl: 'https://image.tmdb.org/t/p/w500'
 };
 
 /*

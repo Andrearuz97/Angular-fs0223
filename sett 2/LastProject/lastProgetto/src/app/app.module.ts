@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -10,13 +10,14 @@ import { UtentiComponent } from './components/utenti/utenti.component';
 import { Error404Component } from './components/error404/error404.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { AuthGuard } from './auth/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth/auth.service';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 const rotte: Route[] = [
     {
@@ -111,7 +112,14 @@ const rotte: Route[] = [
     RouterModule.forRoot(rotte),
     HttpClientModule,
     FormsModule],
-    providers: [AuthGuard,AuthService],
+    providers: [
+        AuthGuard,AuthService,
+        {
+            provide:HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

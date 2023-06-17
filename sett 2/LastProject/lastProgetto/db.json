@@ -37,16 +37,6 @@
       "id": 5
     },
     {
-      "userId": 2,
-      "movieId": 460465,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "movieId": 632357,
-      "id": 8
-    },
-    {
       "userId": 3,
       "movieId": 804435,
       "id": 9
@@ -57,34 +47,19 @@
       "id": 10
     },
     {
-      "userId": 4,
-      "movieId": 813258,
+      "userId": 2,
+      "movieId": 567189,
       "id": 11
     },
     {
-      "userId": 4,
-      "movieId": 823855,
+      "userId": 2,
+      "movieId": 578701,
       "id": 12
     },
     {
-      "userId": 5,
-      "movieId": 399566,
+      "userId": 2,
+      "movieId": 632357,
       "id": 13
-    },
-    {
-      "userId": 5,
-      "movieId": 635302,
-      "id": 14
-    },
-    {
-      "userId": 5,
-      "movieId": 726684,
-      "id": 15
-    },
-    {
-      "userId": 5,
-      "movieId": 460465,
-      "id": 16
     }
   ],
   "genres": [

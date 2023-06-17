@@ -12,6 +12,10 @@
           <li class="list-group-item">Voto: {{ movies.vote_average }} <i class="bi bi-star-fill text-warning"></i></li>
           <li class="list-group-item">Data di uscita: {{ movies.release_date }}</li>
           <li class="list-group-item pb-2">Titolo originale: {{ movies.original_title }}</li>
+          <div *ngIf="!movies" class=" text-center">
+            <span class="spinner-border text-success my-3"></span>
+          </div>
+
           <a routerLink="/movies" id="btn" class="btn btn-primary">Torna ai films</a>
         </ul>
 
