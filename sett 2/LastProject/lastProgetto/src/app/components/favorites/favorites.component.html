@@ -5,7 +5,7 @@
             <span class="spinner-border text-success"></span>
         </div>
         <div class="col-4" *ngFor="let movie of movies">
-            <div class="card w-100">
+            <div class="card w-100 my-3">
                 <div class="card-body mb-4" *ngIf="movies">
                     <h5 class="card-title">{{movie.title}}</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary"><img src="{{ imageURL }}{{ movie.poster_path }}" class="card-img-top"
